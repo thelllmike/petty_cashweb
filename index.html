@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Petty Cash — Expenses, invoices and profit for small businesses</title>
+<meta name="description" content="Petty Cash is the pocket cash book for small businesses. Track income and expenses, send branded invoices and quotations, keep receipts and see your profit — all from your phone.">
+<meta name="theme-color" content="#0F1C2E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Petty Cash — Your business. Your money. Sorted.">
+<meta property="og:description" content="Track every rupee, send invoices and see your profit — all from your phone.">
+<meta property="og:image" content="assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4v16M7 4L3.5 7.5M7 4l3.5 3.5M17 20V4m0 16l-3.5-3.5M17 20l3.5-3.5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 015.5 7h2l1.4-2h6.2l1.4 2h2A1.5 1.5 0 0120 8.5v9a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 17.5v-9z"/><circle cx="12" cy="13" r="3.2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12.5l9 5 9-5M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></symbol>
+    <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 15V3m0 0L7.5 7.5M12 3l4.5 4.5M4 14v5a2 2 0 002 2h12a2 2 0 002-2v-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.4 3.2-5.5 6.5-5.5s5.900 2.100 6.500 5.500M16 4.800a3.500 3.500 0 010 6.400M18.500 14.900c1.700.8 2.700 2.500 3 5.100"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.500A8.500 8.500 0 019.500 4a7 7 0 1010.500 10.500z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.500" y="10.500" width="15" height="10" rx="2"/><path d="M8 10.500V7.500a4 4 0 018 0v3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.500 3v5.500c0 4.600-3.100 8.100-7.500 9.500-4.400-1.400-7.500-4.900-7.500-9.500V6L12 3z"/><path d="M8.800 12.200l2.300 2.300 4.200-4.400"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10.500 6.200A9.700 9.700 0 0112 6c4.500 0 8 3 9.500 6a11.600 11.600 0 01-2.700 3.500M6.300 7.700A11.500 11.500 0 002.500 12c1.500 3 5 6 9.500 6 1.500 0 2.800-.3 4-.8M9.900 9.900a3 3 0 004.200 4.200"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9.500 7V4.500h5V7M6.500 7l.8 12a1.500 1.500 0 001.500 1.500h6.400a1.500 1.500 0 001.500-1.500l.8-12M10 11v5.500M14 11v5.500"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m0 0l-5.500-5.500M19 12l-5.500 5.500"/></symbol>
+    <symbol id="i-fuel" viewBox="0 0 24 24"><path d="M5 20V6a2 2 0 012-2h5a2 2 0 012 2v14M4 20h11M7.500 8h4M14 11h1.500a1.500 1.500 0 011.500 1.500v3a1.500 1.500 0 003 0V9l-2.500-2.500"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500"/><path d="M14.500 9.500c-.4-.9-1.300-1.500-2.500-1.500-1.500 0-2.500.8-2.500 2s1 1.700 2.500 2 2.500.8 2.500 2-1 2-2.500 2c-1.200 0-2.100-.6-2.500-1.500M12 6.500V8m0 8v1.500"/></symbol>
+    <symbol id="i-play" viewBox="0 0 48 48"><path d="M9 5.500v37c0 .9 1 1.400 1.700.9L41 26.300c.8-.5.8-1.600 0-2.100L10.700 4.600C10 4.100 9 4.600 9 5.500z"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path d="M16.400 12.600c0-2.500 2-3.600 2.100-3.700-1.200-1.700-3-1.900-3.600-2-1.500-.2-3 .9-3.800.9-.8 0-2-.9-3.300-.9-1.700 0-3.300 1-4.200 2.500-1.800 3.100-.5 7.700 1.300 10.200.8 1.200 1.900 2.600 3.200 2.500 1.300 0 1.800-.8 3.300-.8s2 .8 3.300.8c1.400 0 2.300-1.300 3.100-2.500 1-1.400 1.400-2.800 1.400-2.900 0 0-2.800-1-2.800-4.100zM14 5.200c.7-.8 1.200-2 1-3.200-1 0-2.200.7-2.900 1.500-.6.7-1.200 1.900-1 3.100 1.100.1 2.200-.6 2.900-1.400z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="#top" aria-label="Petty Cash home">
+      <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand__name">Petty Cash</span>
+    </a>
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--green btn--sm nav__cta" href="https://play.google.com/store/apps/details?id=com.pettycash.app" target="_blank" rel="noopener">Get the app</a>
+    </nav>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true"><div class="glow glow--green"></div><div class="glow glow--blue"></div><div class="gridlines"></div></div>
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <a class="eyebrow" href="https://play.google.com/store/apps/details?id=com.pettycash.app" target="_blank" rel="noopener"><span class="eyebrow__dot"></span>Now live on Google Play</a>
+      <h1>Your business.<br>Your money.<br><em>Sorted.</em></h1>
+      <p class="hero__sub">Petty Cash is the pocket cash book for small businesses. Track every rupee in and out, send branded invoices and see your profit — all from your phone.</p>
+      <div class="hero__cta">
+        <a class="store" href="https://play.google.com/store/apps/details?id=com.pettycash.app" target="_blank" rel="noopener">
+          <svg class="store__icon" aria-hidden="true"><use href="#i-play"/></svg>
+          <span><small>Download free on</small><b>Google Play</b></span>
+        </a>
+        <span class="soon"><svg aria-hidden="true"><use href="#i-apple"/></svg>iOS coming soon</span>
+      </div>
+      <ul class="hero__ticks">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No ads</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No trackers</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>10 currencies</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      <div class="phone">
+        <div class="phone__screen">
+          <div class="phone__island"></div>
+          <div class="app-head">
+            <div class="app-hello">Good morning</div>
+            <div class="app-biz">Kandy Traders</div>
+          </div>
+          <div class="app-hero">
+            <small>Profit · This month</small>
+            <div class="app-big">Rs 248,500</div>
+            <div class="app-row">
+              <div class="app-pill"><span>Income</span><b class="up">↑ 412,000</b></div>
+              <div class="app-pill"><span>Expenses</span><b class="down">↓ 163,500</b></div>
+            </div>
+            <div class="app-bars">
+              <div style="--h:40%"></div><div style="--h:58%"></div><div style="--h:46%"></div>
+              <div style="--h:70%"></div><div style="--h:62%"></div><div class="is-now" style="--h:100%"></div>
+            </div>
+          </div>
+          <div class="app-list">
+            <h4>Recent</h4>
+            <div class="app-item"><div class="app-dot app-dot--green"><svg><use href="#i-coin"/></svg></div><div class="app-t"><b>Invoice #1042</b><span>Paid · Today</span></div><div class="app-amt app-amt--in">+45,000</div></div>
+            <div class="app-item"><div class="app-dot app-dot--amber"><svg><use href="#i-fuel"/></svg></div><div class="app-t"><b>Fuel</b><span>Transport · Today</span></div><div class="app-amt">−6,200</div></div>
+            <div class="app-item"><div class="app-dot app-dot--blue"><svg><use href="#i-doc"/></svg></div><div class="app-t"><b>Office supplies</b><span>Receipt attached</span></div><div class="app-amt">−3,850</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="chip chip--a"><div class="chip__ic chip__ic--green"><svg><use href="#i-chart"/></svg></div><div><b>+18% profit</b><span>vs last month</span></div></div>
+      <div class="chip chip--b"><div class="chip__ic chip__ic--blue"><svg><use href="#i-doc"/></svg></div><div><b>Invoice sent</b><span>PDF with your logo</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACT STRIP ============ -->
+<section class="facts" aria-label="At a glance">
+  <div class="container facts__grid">
+    <div class="fact"><b>10</b><span>currencies, with LKR as the default</span></div>
+    <div class="fact"><b>PDF</b><span>invoices &amp; quotations with your logo</span></div>
+    <div class="fact"><b>P&amp;L</b><span>for every business, every period</span></div>
+    <div class="fact"><b>0</b><span>ads or analytics trackers</span></div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="kicker">Features</p>
+      <h2>Everything a small business needs to <em>stay on top of money</em></h2>
+      <p class="lede">No spreadsheets, no accounting jargon. Just the tools you reach for every day, built to be fast on a phone.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card__ic"><svg aria-hidden="true"><use href="#i-swap"/></svg></div>
+        <h3>Expenses &amp; income</h3>
+        <p>Record money in and out in a few taps. Sort it into categories and filter the list when you need to find something.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ic"><svg aria-hidden="true"><use href="#i-doc"/></svg></div>
+        <h3>Invoices &amp; quotations</h3>
+        <p>Create a professional PDF with your logo, bank details, advances and discounts — then share it straight to WhatsApp or email.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ic"><svg aria-hidden="true"><use href="#i-camera"/></svg></div>
+        <h3>Receipts, kept safe</h3>
+        <p>Snap a receipt with your camera or pick one from your gallery and attach it to the expense. No more shoeboxes.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ic"><svg aria-hidden="true"><use href="#i-layers"/></svg></div>
+        <h3>Multiple businesses</h3>
+        <p>Run a shop and a side business? Keep each one separate, switch in a tap and compare them side by side.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ic"><svg aria-hidden="true"><use href="#i-chart"/></svg></div>
+        <h3>Profit &amp; loss</h3>
+        <p>See revenue, expenses and net profit for any period, with a category breakdown that shows where the money goes.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ic"><svg aria-hidden="true"><use href="#i-export"/></svg></div>
+        <h3>Reports &amp; tax export</h3>
+        <p>Pull a clean summary when your accountant asks for it, instead of rebuilding the year from memory.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ic"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
+        <h3>Clients &amp; vendors</h3>
+        <p>Keep the people you bill and buy from in one place, ready to drop onto the next invoice or quotation.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__ic"><svg aria-hidden="true"><use href="#i-moon"/></svg></div>
+        <h3>Light &amp; dark mode</h3>
+        <p>Easy on the eyes at the counter at noon and at the kitchen table at midnight. It follows your phone's setting.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE ============ -->
+<section class="section section--tint">
+  <div class="container">
+
+    <div class="split reveal">
+      <div class="split__copy">
+        <p class="kicker">Profit at a glance</p>
+        <h2>Know if you made money <em>this month</em></h2>
+        <p class="lede">Open the app and the answer is the first thing you see. Income, expenses and net profit, with the trend over the last six months.</p>
+        <ul class="ticks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Monthly and custom-period P&amp;L</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Spending broken down by category</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Totals converted into your base currency</li>
+        </ul>
+      </div>
+      <div class="split__visual" aria-hidden="true">
+        <div class="panel panel--ink">
+          <div class="panel__top"><span>Net profit · October</span><span class="tag tag--green">+18%</span></div>
+          <div class="panel__big">Rs 248,500</div>
+          <div class="trend">
+            <div><i style="--h:36%"></i><span>May</span></div>
+            <div><i style="--h:52%"></i><span>Jun</span></div>
+            <div><i style="--h:44%"></i><span>Jul</span></div>
+            <div><i style="--h:66%"></i><span>Aug</span></div>
+            <div><i style="--h:60%"></i><span>Sep</span></div>
+            <div class="is-now"><i style="--h:100%"></i><span>Oct</span></div>
+          </div>
+          <div class="cats">
+            <div class="cat"><span>Stock</span><div class="cat__bar"><i style="width:78%"></i></div><b>84,000</b></div>
+            <div class="cat"><span>Rent</span><div class="cat__bar"><i style="width:42%"></i></div><b>45,000</b></div>
+            <div class="cat"><span>Transport</span><div class="cat__bar"><i style="width:22%"></i></div><b>21,300</b></div>
+            <div class="cat"><span>Utilities</span><div class="cat__bar"><i style="width:14%"></i></div><b>13,200</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split split--flip reveal">
+      <div class="split__copy">
+        <p class="kicker">Get paid</p>
+        <h2>Invoices that look like <em>you mean business</em></h2>
+        <p class="lede">Add your logo, payment details and footer once. Every invoice and quotation after that is a tidy, branded PDF your customer can open anywhere.</p>
+        <ul class="ticks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Automatic document numbers</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Advances and discounts on the total</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Draft, sent, paid and overdue at a glance</li>
+        </ul>
+      </div>
+      <div class="split__visual" aria-hidden="true">
+        <div class="doc">
+          <div class="doc__head">
+            <div class="doc__logo"><span class="brand__mark brand__mark--sm"><i></i><i></i><i></i></span>Kandy Traders</div>
+            <div class="doc__title">Invoice<small>INV-1042</small></div>
+          </div>
+          <div class="doc__meta"><div><small>Billed to</small><b>Perera Hardware</b></div><div><small>Date</small><b>28 Oct 2026</b></div></div>
+          <table class="doc__table">
+            <thead><tr><th>Item</th><th>Qty</th><th>Amount</th></tr></thead>
+            <tbody>
+              <tr><td>Paint, 4L</td><td>6</td><td>27,000</td></tr>
+              <tr><td>Brush set</td><td>10</td><td>12,500</td></tr>
+              <tr><td>Delivery</td><td>1</td><td>8,000</td></tr>
+            </tbody>
+          </table>
+          <div class="doc__totals">
+            <div><span>Subtotal</span><span>47,500</span></div>
+            <div><span>Discount</span><span>−2,500</span></div>
+            <div class="doc__total"><span>Total due</span><span>Rs 45,000</span></div>
+          </div>
+          <span class="stamp">Paid</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="split reveal">
+      <div class="split__copy">
+        <p class="kicker">More than one business</p>
+        <h2>See every business <em>side by side</em></h2>
+        <p class="lede">Each business keeps its own books, currency and branding. The home screen adds them up, and Compare shows which one is really pulling its weight.</p>
+        <ul class="ticks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>One sign-in for all your businesses</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>A separate currency for each one</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Share of net profit in one chart</li>
+        </ul>
+      </div>
+      <div class="split__visual" aria-hidden="true">
+        <div class="panel">
+          <div class="panel__top"><span>Share of net profit</span><span class="tag">This month</span></div>
+          <div class="share"><i class="s-green" style="width:52%"></i><i class="s-blue" style="width:33%"></i><i class="s-amber" style="width:15%"></i></div>
+          <div class="biz"><span class="biz__dot s-green"></span><div><b>Kandy Traders</b><small>Margin 60.3%</small></div><strong>Rs 248,500</strong></div>
+          <div class="biz"><span class="biz__dot s-blue"></span><div><b>Hill Country Prints</b><small>Margin 41.8%</small></div><strong>Rs 157,700</strong></div>
+          <div class="biz"><span class="biz__dot s-amber"></span><div><b>Lake Road Café</b><small>Margin 22.4%</small></div><strong>Rs 71,600</strong></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="kicker">How it works</p>
+      <h2>Up and running in <em>a couple of minutes</em></h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal"><span class="step__n">1</span><h3>Download and sign in</h3><p>Get Petty Cash from Google Play and sign up with your email or your Google account.</p></li>
+      <li class="step reveal"><span class="step__n">2</span><h3>Add your business</h3><p>Give it a name, a currency and a logo. Add as many businesses as you run.</p></li>
+      <li class="step reveal"><span class="step__n">3</span><h3>Track, bill and relax</h3><p>Record what comes in and goes out, send invoices, and let the app work out your profit.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PRIVACY ============ -->
+<section class="section section--ink" id="privacy">
+  <div class="container trust">
+    <div class="trust__copy reveal">
+      <p class="kicker kicker--bright">Privacy &amp; security</p>
+      <h2>Your books are <em>your business</em></h2>
+      <p class="lede">Financial records are personal. Petty Cash is built so that the only person who can read yours is you.</p>
+      <a class="link" href="privacy.html">Read the privacy policy <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="trust__grid">
+      <div class="trust__item reveal"><svg aria-hidden="true"><use href="#i-lock"/></svg><h3>Encrypted in transit</h3><p>Everything travels between your phone and the cloud over HTTPS.</p></div>
+      <div class="trust__item reveal"><svg aria-hidden="true"><use href="#i-shield"/></svg><h3>Only you see your data</h3><p>Access rules in the database mean each account can only reach its own records.</p></div>
+      <div class="trust__item reveal"><svg aria-hidden="true"><use href="#i-eye-off"/></svg><h3>No ads, no trackers</h3><p>We don't sell your information or use it for advertising. Ever.</p></div>
+      <div class="trust__item reveal"><svg aria-hidden="true"><use href="#i-trash"/></svg><h3>Delete any time</h3><p>Remove records in the app, or ask us to delete your whole account and data.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container container--narrow">
+    <div class="section__head reveal">
+      <p class="kicker">FAQ</p>
+      <h2>Questions, <em>answered</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Is Petty Cash free?</summary>
+        <p>Petty Cash is free to download from Google Play.</p>
+      </details>
+      <details>
+        <summary>Which currencies are supported?</summary>
+        <p>Ten: Sri Lankan rupee (the default), US dollar, euro, pound sterling, Indian rupee, Australian dollar, Canadian dollar, UAE dirham, Singapore dollar and Japanese yen. Each business can use its own currency.</p>
+      </details>
+      <details>
+        <summary>Can I manage more than one business?</summary>
+        <p>Yes. Add each business separately, switch between them from Settings and compare their performance side by side.</p>
+      </details>
+      <details>
+        <summary>Is there an iPhone version?</summary>
+        <p>Petty Cash is available on Android today. An iOS version is coming soon.</p>
+      </details>
+      <details>
+        <summary>Can I put my own logo on invoices?</summary>
+        <p>Yes. Upload a PNG or JPEG logo for each business, along with your payment details and footer line. They appear on every invoice and quotation PDF.</p>
+      </details>
+      <details>
+        <summary>How do I delete my account?</summary>
+        <p>Email <a href="mailto:sachinharshitha971@gmail.com">sachinharshitha971@gmail.com</a> from your registered address and your account and data will be deleted within 30 days. See the <a href="privacy.html">privacy policy</a> for details.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="container">
+    <div class="cta__box reveal">
+      <div class="hero__bg" aria-hidden="true"><div class="glow glow--green"></div><div class="gridlines"></div></div>
+      <img class="cta__icon" src="assets/icon.png" width="72" height="72" alt="">
+      <h2>Get your money <em>sorted</em> today</h2>
+      <p>Download Petty Cash and record your first expense in under a minute.</p>
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.pettycash.app" target="_blank" rel="noopener">
+        <svg class="store__icon" aria-hidden="true"><use href="#i-play"/></svg>
+        <span><small>Download free on</small><b>Google Play</b></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="#top" aria-label="Petty Cash home">
+        <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand__name">Petty Cash</span>
+      </a>
+      <p>The pocket cash book for small businesses.</p>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="mailto:sachinharshitha971@gmail.com">Contact</a>
+    </nav>
+  </div>
+  <div class="container footer__base">© <span id="year">2026</span> Petty Cash. All rights reserved.</div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
